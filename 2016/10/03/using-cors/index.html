@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="CORS," />
 
 
 
@@ -57,12 +57,24 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="工大学子技术博客">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="12原文链接： http://www.html5rocks.com/en/tutorials/cors/作者：Monsur Hossain
+简介API 是让你能组装一个 web 富应用的脚手架工具，但这些操作浏览器有时候也难以理解，当你跨域去执行一个请求的时候，这些操作技术就仅限于 JSON-P(但出于安全方面的考虑，有时候使用也受限)或者建立一个传统的代理(但建设和维护成本高)。
+跨域资源共享">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Using CORS (使用跨域资源共享)">
+<meta property="og:url" content="http://yoursite.com/2016/10/03/using-cors/index.html">
 <meta property="og:site_name" content="工大学子技术博客">
+<meta property="og:description" content="12原文链接： http://www.html5rocks.com/en/tutorials/cors/作者：Monsur Hossain
+简介API 是让你能组装一个 web 富应用的脚手架工具，但这些操作浏览器有时候也难以理解，当你跨域去执行一个请求的时候，这些操作技术就仅限于 JSON-P(但出于安全方面的考虑，有时候使用也受限)或者建立一个传统的代理(但建设和维护成本高)。
+跨域资源共享">
+<meta property="og:image" content="http://7xrzdf.com1.z0.glb.clouddn.com/cors_flow.png">
+<meta property="og:updated_time" content="2016-10-03T00:04:52.202Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="工大学子技术博客">
+<meta name="twitter:title" content="Using CORS (使用跨域资源共享)">
+<meta name="twitter:description" content="12原文链接： http://www.html5rocks.com/en/tutorials/cors/作者：Monsur Hossain
+简介API 是让你能组装一个 web 富应用的脚手架工具，但这些操作浏览器有时候也难以理解，当你跨域去执行一个请求的时候，这些操作技术就仅限于 JSON-P(但出于安全方面的考虑，有时候使用也受限)或者建立一个传统的代理(但建设和维护成本高)。
+跨域资源共享">
+<meta name="twitter:image" content="http://7xrzdf.com1.z0.glb.clouddn.com/cors_flow.png">
 
 
 
@@ -80,7 +92,7 @@
   };
 </script>
 
-  <title> 工大学子技术博客 </title>
+  <title> Using CORS (使用跨域资源共享) | 工大学子技术博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -101,9 +113,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left 
-   page-home 
- ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -200,9 +210,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
   
@@ -222,10 +232,7 @@
             
             
               
-                
-                <a class="post-title-link" href="/2016/10/03/using-cors/" itemprop="url">
-                  Using CORS (使用跨域资源共享)
-                </a>
+                Using CORS (使用跨域资源共享)
               
             
           </h1>
@@ -283,9 +290,7 @@
       
 
       
-        
-          
-            <hr>
+        <hr>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">原文链接： http:<span class="comment">//www.html5rocks.com/en/tutorials/cors/</span></div><div class="line">作者：Monsur Hossain</div></pre></td></tr></table></figure>
 <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>API 是让你能组装一个 web 富应用的脚手架工具，但这些操作浏览器有时候也难以理解，当你跨域去执行一个请求的时候，这些操作技术就仅限于 <code>JSON-P</code>(但出于安全方面的考虑，有时候使用也受限)或者建立一个传统的代理(但建设和维护成本高)。</p>
 <p><strong>跨域资源共享 Cross-Origin Resource Sharing</strong> [<code>CORS</code>] 是 W3C 制定的一个标准，允许通过浏览器进行跨域通信。 CORS 建立在 XMLHttpRequest 对象之上，允许开发者用操作同域请求的方式处理跨域请求。</p>
@@ -441,258 +446,51 @@
 <p>下面是有 JQuery 发起一个 CORS 请求<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div></pre></td><td class="code"><pre><div class="line">$.ajax(&#123;</div><div class="line"></div><div class="line">  <span class="comment">// The 'type' property sets the HTTP method.</span></div><div class="line">  <span class="comment">// A value of 'PUT' or 'DELETE' will trigger a preflight request.</span></div><div class="line">  type: <span class="string">'GET'</span>,</div><div class="line"></div><div class="line">  <span class="comment">// The URL to make the request to.</span></div><div class="line">  url: <span class="string">'http://html5rocks-cors.s3-website-us-east-1.amazonaws.com/index.html'</span>,</div><div class="line"></div><div class="line">  <span class="comment">// The 'contentType' property sets the 'Content-Type' header.</span></div><div class="line">  <span class="comment">// The JQuery default for this property is</span></div><div class="line">  <span class="comment">// 'application/x-www-form-urlencoded; charset=UTF-8', which does not trigger</span></div><div class="line">  <span class="comment">// a preflight. If you set this value to anything other than</span></div><div class="line">  <span class="comment">// application/x-www-form-urlencoded, multipart/form-data, or text/plain,</span></div><div class="line">  <span class="comment">// you will trigger a preflight request.</span></div><div class="line">  contentType: <span class="string">'text/plain'</span>,</div><div class="line"></div><div class="line">  <span class="attr">xhrFields</span>: &#123;</div><div class="line">    <span class="comment">// The 'xhrFields' property sets additional fields on the XMLHttpRequest.</span></div><div class="line">    <span class="comment">// This can be used to set the 'withCredentials' property.</span></div><div class="line">    <span class="comment">// Set the value to 'true' if you'd like to pass cookies to the server.</span></div><div class="line">    <span class="comment">// If this is enabled, your server must respond with the header</span></div><div class="line">    <span class="comment">// 'Access-Control-Allow-Credentials: true'.</span></div><div class="line">    withCredentials: <span class="literal">false</span></div><div class="line">  &#125;,</div><div class="line"></div><div class="line">  <span class="attr">headers</span>: &#123;</div><div class="line">    <span class="comment">// Set any custom headers here.</span></div><div class="line">    <span class="comment">// If you set any non-simple headers, your server must include these</span></div><div class="line">    <span class="comment">// headers in the 'Access-Control-Allow-Headers' response header.</span></div><div class="line">  &#125;,</div><div class="line"></div><div class="line">  <span class="attr">success</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="comment">// Here's where you handle a successful response.</span></div><div class="line">  &#125;,</div><div class="line"></div><div class="line">  <span class="attr">error</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="comment">// Here's where you handle an error response.</span></div><div class="line">    <span class="comment">// Note that if the error was due to a CORS issue,</span></div><div class="line">    <span class="comment">// this function will still fire, but there won't be any additional</span></div><div class="line">    <span class="comment">// information about the error.</span></div><div class="line">  &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
 <p>（完）</p>
 
-          
-        
       
     </div>
 
     <div>
       
+        
+      
     </div>
 
     <footer class="post-footer">
       
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/10/03/react-notes-about-form/" itemprop="url">
-                  React系列学习笔记之表单详解
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-10-03T08:04:28+08:00" content="2016-10-03">
-              2016-10-03
-            </time>
-          </span>
-
+        <div class="post-tags">
           
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/fed/" itemprop="url" rel="index">
-                    <span itemprop="name">fed</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
+            <a href="/tags/CORS/" rel="tag">#CORS</a>
           
-
-          
-            
-          
-
-          
-
-          
-          
-
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <hr>
-<blockquote>
-<p><strong>1. 可控组件和不可控组件</strong><br><strong>2. 不同表单元素的使用</strong><br><strong>3. 如何复用事件处理函数</strong></p>
-</blockquote>
-<p> <strong>1.1 不可控组件</strong><br><figure class="highlight jsx"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;input type=<span class="string">"text"</span> defaultValue=<span class="string">"Hello World!"</span>&gt;</div></pre></td></tr></table></figure></p>
-<p>前面这个简单的input组件<strong>[react中有两大类组件，一类是自定义的组件，另一类是原生的HTML标签]</strong>就是一个不可控组件。</p>
-<p>因为组件中的数据和state中的数据不再对应，而是写死在了组件中。组件中的数据对整个组件来说是不可控的。</p>
-<p>不可控组件组件下，如果我们要获取到<code>defaultValue</code>的值，就必须得去操作真实的DOM.<br><figure class="highlight jsx"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;input type=<span class="string">"text"</span> ref=<span class="string">"hello"</span> defaultValue=<span class="string">"Hello World!"</span>&gt;</div></pre></td></tr></table></figure></p>
-<figure class="highlight jsx"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> inputValue = React.findDOMNode(<span class="keyword">this</span>.refs.hello).value;</div></pre></td></tr></table></figure>
-<p>给组件添加<code>ref</code>属性，然后通过<code>React.findDOMNode()</code>找到对应的节点。</p>
-<p> <strong>1.2 可控组件</strong><br><figure class="highlight jsx"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">getInitialState: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> &#123;</div><div class="line">        <span class="attr">hello</span>: <span class="string">"Hello World!"</span></div><div class="line">    &#125;;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<figure class="highlight jsx"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;input type=<span class="string">"text"</span> ref=<span class="string">"hello"</span> value=&#123;<span class="keyword">this</span>.state.hello&#125;&gt;</div></pre></td></tr></table></figure>
-<p>上面这个就是可控组件，数据存储在state中，便于使用，读取的是JS对象而不是DOM节点。符合reac单向数据流的特点，数据从state–&gt;render。<br>使用可控组件可以方便的对数据进行处理，比如在handleChange里面可以对数据进行方便的操作。</p>
-<p> <strong>2. 不同表单元素的使用</strong><br><figure class="highlight jsx"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;label htmlFor=<span class="string">"name"</span> className=<span class="string">"name"</span>&gt;name&lt;label&gt;</div></pre></td></tr></table></figure></p>
-<figure class="highlight jsx"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;input type=<span class="string">"checkbox"</span> <span class="comment">/* "radio" "text"*/</span></div><div class="line">       value=<span class="string">"A"</span></div><div class="line">       checked=&#123;<span class="keyword">this</span>.state.checked&#125;</div><div class="line">       onchange=&#123;<span class="keyword">this</span>.handleChange&#125; /&gt;</div></pre></td></tr></table></figure>
-<figure class="highlight jsx"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;textarea value=<span class="string">"A"</span> rows=<span class="string">"10"</span> cols=<span class="string">"30"</span></div><div class="line">          onChange=&#123;<span class="keyword">this</span>.handleChange&#125; /&gt;</div></pre></td></tr></table></figure>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;select value=&#123;this.state.hello&#125;</div><div class="line">        onChange=&#123;this.handleChange&#125;&gt;</div><div class="line">    &lt;option value="one"&gt;一&lt;/option&gt;</div><div class="line">    &lt;option value="two"&gt;二&lt;/option&gt;</div><div class="line">&lt;/select&gt;</div></pre></td></tr></table></figure>
-<p>说明一下上面select的value是每次被选中option的value</p>
-<p><strong>3. 如何复用事件处理函数</strong><br>事件函数的可以有<code>bind</code>和<code>name</code>复用两种<br><figure class="highlight jsx"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">handleChange(name, event)&#123;</div><div class="line">    <span class="comment">//...</span></div><div class="line">&#125;</div><div class="line"></div><div class="line">...</div><div class="line"></div><div class="line">&lt;input type=<span class="string">"text"</span> onChange=&#123;<span class="keyword">this</span>.handleChange.bind(<span class="keyword">this</span>, <span class="string">`input1`</span>)&#125;&gt;</div><div class="line">&lt;input type="text" onChange=&#123;this.handleChange.bind(this, `input2`)&#125;&gt;</div></pre></td></tr></table></figure></p>
-<p><code>bind</code>每次将第二参数传给handleChange的name,这样每次调用handleChange，就可以分辨出是哪个input发生了变化。<br><figure class="highlight jsx"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">handleChange(name,event)&#123;</div><div class="line">    <span class="keyword">var</span> name = event.target.name;</div><div class="line">    ...</div><div class="line">&#125;</div><div class="line"></div><div class="line">...</div><div class="line"></div><div class="line">&lt;input type=<span class="string">"text"</span> name=<span class="string">"input1"</span> onChange=&#123;<span class="keyword">this</span>.handleChange&#125;&gt;</div><div class="line">&lt;input type="text" name="input2" onChange=&#123;this.handleChange&#125;&gt;</div></pre></td></tr></table></figure></p>
-<p>给input添加name属性，每次在handleChange中获取目标事件的name，确定要处理的input.达到复用事件处理函数。</p>
-<p>两种方法都可以复用事件处理函数。不过通过name实现的复用性能比bind实现的低。前者每次都会在事件处理函数中获取一次name的值，后者直接在参数中直接传入。推荐使用bind.</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
+              <a href="/2016/10/03/react-notes-about-form/" rel="next" title="React系列学习笔记之表单详解">
+                <i class="fa fa-chevron-left"></i> React系列学习笔记之表单详解
+              </a>
             
-              
-                
-                <a class="post-title-link" href="/2016/09/30/hello-world/" itemprop="url">
-                  Hello World
-                </a>
-              
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
             
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-09-30T13:48:50+08:00" content="2016-09-30">
-              2016-09-30
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
+          </div>
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -700,6 +498,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -719,8 +521,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="http://7xrzdf.com1.z0.glb.clouddn.com/avatar.jpg"
@@ -790,6 +601,23 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#发起一个-CORS-请求"><span class="nav-number">2.</span> <span class="nav-text">发起一个 CORS 请求</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建一个-XMLHtttpRequest-对象"><span class="nav-number">2.1.</span> <span class="nav-text">创建一个 XMLHtttpRequest 对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#事件处理函数"><span class="nav-number">2.2.</span> <span class="nav-text">事件处理函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#withCredentials"><span class="nav-number">2.3.</span> <span class="nav-text">withCredentials</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#发起请求"><span class="nav-number">2.4.</span> <span class="nav-text">发起请求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#完整演示"><span class="nav-number">2.5.</span> <span class="nav-text">完整演示</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#服务器端添加-CORS-支持"><span class="nav-number">3.</span> <span class="nav-text">服务器端添加 CORS 支持</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#CORS-的请求类型"><span class="nav-number">3.1.</span> <span class="nav-text">CORS 的请求类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#处理一个简单请求"><span class="nav-number">3.2.</span> <span class="nav-text">处理一个简单请求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#处理一个非简单请求"><span class="nav-number">3.3.</span> <span class="nav-text">处理一个非简单请求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#简单了解安全性"><span class="nav-number">3.4.</span> <span class="nav-text">简单了解安全性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JQuey-实现-CORS"><span class="nav-number">4.</span> <span class="nav-text">JQuey  实现 CORS</span></a></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
       
 
     </div>
@@ -881,6 +709,167 @@
 
 
   
+  
+<script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 1 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = NexT.utils.escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    NexT.motion.middleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+
+      if (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          NexT.utils.displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
 
   
 
